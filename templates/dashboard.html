@@ -5,9 +5,9 @@
         <title>BisonAdvisor | Dashboard</title>
     </head>
     <body>
-        <h1>Hello, {{username}}</h1>
+        <h1>Hello, {{username}}.</h1>
 
-        BisonAdvisor Functions<br>
+        BisonAdvisor Actions<br>
         <a href = "{{url_for('chat')}}">Chat (24/7 Support)</a><br>
         <a href = "{{url_for('courseInfo')}}">Course Info</a><br>
         <a href = "{{url_for('courseCatalog')}}" style="padding-left: 10px;">Course Catalog</a><br>
@@ -15,7 +15,9 @@
         <a href = "{{url_for('recommendations')}}">Course Recommendations</a><br>
         <a href = "{{url_for('supportResources')}}">Support Resources</a><br><br>
 
-        Account Management<br>
+        Preferences<br>
+        <a href = "{{url_for('profileManagement')}}">Profile Management</a><br>
+        <a href = "{{url_for('settings')}}">Settings</a><br><br>
         <a href = "{{url_for('logout')}}">Press here to log out.</a>
     </body>
 </html>

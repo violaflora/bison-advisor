@@ -133,5 +133,17 @@ def recommendations():
 def supportResources():
     return render_template('/dash/support-resources.html')
 
+# preference sub-pages
+@app.route('/prefs/profile-management.html', methods=['GET', 'POST'])
+@login_required
+def profileManagement():
+    return render_template('/prefs/profile-management.html')
+
+@app.route('/prefs/settings.html', methods=['GET', 'POST'])
+@login_required
+def settings():
+    return render_template('/prefs/settings.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
