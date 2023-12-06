@@ -8,7 +8,8 @@ from wtforms.validators import InputRequired, Length, ValidationError
 
 from flask_bcrypt import Bcrypt
 
-# change instance_path to the root folder on your machine
+# TODO: use os to set instance_path
+# for now, change instance_path to the root folder on your machine
 app = Flask(__name__, instance_path='/Users/violetedwards/Code/bison-advisor/')
 bcrypt = Bcrypt(app)
 # database setup
@@ -99,6 +100,32 @@ def logout():
 @login_required
 def dashboard():
     return render_template('dashboard.html')
+
+# dashboard sub-pages
+@app.route('/dash/chat.html', methods=['GET', 'POST'])
+@login_required
+def chat():
+    return render_template('/dash/chat.html')
+
+@app.route('/dash/course-info.html', methods=['GET', 'POST'])
+@login_required
+def courseInfo():
+    return render_template('/dash/course-info.html')
+
+@app.route('/dash/form-generator.html', methods=['GET', 'POST'])
+@login_required
+def formGenerator():
+    return render_template('/dash/form-generator.html')
+
+@app.route('/dash/recommendations.html', methods=['GET', 'POST'])
+@login_required
+def recommendations():
+    return render_template('/dash/recommendations.html')
+
+@app.route('/dash/support-resources.html', methods=['GET', 'POST'])
+@login_required
+def supportResources():
+    return render_template('/dash/support-resources.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

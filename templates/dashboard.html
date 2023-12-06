@@ -2,10 +2,17 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Landing</title>
+        <title>BisonAdvisor | Dashboard</title>
     </head>
     <body>
         <h1>Hello, you are logged in.</h1><br>
+
+        <a href = "{{url_for('chat')}}">Chat (24/7 Support)</a><br>
+        <a href = "{{url_for('courseInfo')}}">Course Info</a><br>
+        <a href = "{{url_for('formGenerator')}}">Form Generator</a><br>
+        <a href = "{{url_for('recommendations')}}">Course Recommendations</a><br>
+        <a href = "{{url_for('supportResources')}}">Support Resources</a><br>
+
         <a href = "{{url_for('logout')}}">Press here to log out.</a>
     </body>
 </html>
