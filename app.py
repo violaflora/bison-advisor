@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user
+from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
@@ -99,7 +99,8 @@ def logout():
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
-    return render_template('dashboard.html')
+    username = current_user.username
+    return render_template('dashboard.html', username = username)
 
 # dashboard sub-pages
 @app.route('/dash/chat.html', methods=['GET', 'POST'])
