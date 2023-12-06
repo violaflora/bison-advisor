@@ -27,7 +27,7 @@ class RegisterForm(FlaskForm):
     password = PasswordField(
         validators=[InputRequired(), Length(min = 4, max = 20)],
         render_kw={"placeholder": "Password"})
-    SubmitField = SubmitField("Register")
+    submit = SubmitField("Register")
 
 @app.route('/')
 # https://youtu.be/71EU8gnZqZQ?si=Mwxt6Y7D3TGVfISr
