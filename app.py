@@ -108,6 +108,11 @@ def dashboard():
 def chat():
     return render_template('/dash/chat.html')
 
+@app.route('/dash/course-catalog.html', methods=['GET', 'POST'])
+@login_required
+def courseCatalog():
+    return render_template('/dash/course-catalog.html')
+
 @app.route('/dash/course-info.html', methods=['GET', 'POST'])
 @login_required
 def courseInfo():
